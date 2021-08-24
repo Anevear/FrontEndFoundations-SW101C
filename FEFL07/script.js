@@ -14,3 +14,15 @@ function setHeading (){
 
          document.getElementById('output').appendChild(heading); // append the heading to the div element
 }
+
+function phoneNumberFormat() {
+         let phoneNumber = document.getElementById('phNumber').value;
+         let phoneRegex = /^\(\d\d\d\) \d\d\d-\d\d\d\d$/;
+         if (phoneNumber.match(phoneRegex)) {
+                  alert('Valid number entered');
+                  console.log(true);
+         } else {
+                  alert('Phone number entered is invalid');
+                  console.log(false);
+         }
+}

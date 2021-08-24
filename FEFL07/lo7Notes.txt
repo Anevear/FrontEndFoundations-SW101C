@@ -200,3 +200,40 @@ Notice that the above chare need to be escaped w/ a \ to be treated as sp codes.
 >> ^Score:\t[0-9]+ - this regex means that starting at the beginning of the string, the word "Score" followed by a colon (:) must be present to match. it also req a tab character (\t) to follow the colon and then at least one number btn zero and nine.this would match "Score: 5" and "Score: 100" , as well as several others (NOTE: the whitespace in btn "Score:" and the number is meant to be a tab).
 >> ^\(\d\d\d\) - This matches '(123)', '(492)', and many others. The regex means that there must be an opening parenthesis followed by three digits between zero and nine and a closing parenthesis in order to match. This is like the \([0-9][0-9][0-9]\) example above.
 >> ^\s*Hello$ - This regex means that there may be zero or more (*) whitespace characters (\s) at the start of the string (^) and then the word "Hello". Nothing can follow the word "Hello" to match (due to the $).
+
+const newRegex = /regexpression/; // this creates a regular expression
+
+const banana = /^(ba|na+$)/; // either 'ba' or 'na' can appear one or more times in the string
+const thisRegex = /Programmer/; // "Programmer" can appear anywhere w/i the string
+
+when using JS regular expressions, by default, are case sensitive and only search for the frst match in any given string. By adding the g, and i modifiers after the closing / (the second backslash), you can make a regular expression search for all matches in the string and ignore case, respectively.
+
+>> g - Global
+>> i - Ignore case
+
+the following example string:
+example1 Example2 EXAMPLE3 
+to match *ALL* 3 of the strings above the regex you would need:
+/Example[0-9]+/gi;  //this snippet uses the g to make the regular expression global and the i to ignore the case to match just example1 you would use /Example[0-9]+/i. the i modifier ignores case and allows you to match the word and number (its only matching the first one because its not global** remember that by default its just the first match{I had to read that shit several times to reason that out like geez})
+
+>> match() :: common regex function, takes a regular expression as a parameter and returns an array of all the matching strings found in the string under consideration. If no matches are discovered, match() will return false Example in html/js phNumber and phoneNumberFormat()
+
+in that function its checking to see if the phoneNumber function parameter matches the regex format of the phoneRegex variable:
+>> the regex begins with the '^' indicating that any match must begin at the start of the string.
+>> next its the \( which will match the opening ( the \(backslash) to remove the special meaning from the (
+>> remember \d is a special code to amtch ANY digit same as [0-9]
+>> $ for indication that any match must end at the end of the string (as in no more chars after).
+
+let phoneRegex = /^\(\d{3}\) \d{3}-\d{4}$/; // im sorry but what the actual fuck. this makes me cross-eyed... anyway this is shorthand.
+
+breakdown: \d: any digit {3}: number of digits similarly: [0-9]{3} making \d{3} the same as \d\d\d 
+
+<<<<<<******______ Special Code Cheat Sheet______******>>>>>>
+
+. - any character except newline
+\w \d \s - word, digit, whitespace
+\W \D \S - not word, not digit, not whitespace
+[abc] - any of a, b, or c
+[^abc] - not a, b, or c
+[a-g] - character range between a & g
+[0-9] - number range between 0 and 9
