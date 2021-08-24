@@ -1,0 +1,56 @@
+the "justify-content: center" property has the same effect as adding a "margin: 0 auto" to the menu element. notice that adding the property to the parent element, menu-container, instead of directly tto the element that i wanted to center, menu. Manipulationg flex items thru their parent container is a common theme in flexbox
+there are 5 vals for the justify-content property
+> center
+>flex-start
+>flex-end
+>space-around - spreads the flex items across the width of the container
+>space-between - similar to the abv but it only adds extra space btn the items
+
+should go in and replace center w/ ea of the other props to see what it does visually
+flex- end will shift everything to the left
+the 2 space cmds are only useful if you have multiple flex items in the container
+
+in the .menu of the css first using the space-between * adding flex to this now makes this a nested flexcontainer the space-around val will spread around the items contained across the width of this particular container which is also the parent of the items contained
+changing the .menu n2 a flex container by adding the display: flex; since the items contained cannot be directly manipulated since they are children of the .menu not the .menu-container.
+there are only parent-child levels of inheritence not grandparent-child inheritence. Its only one lvl deep.
+wrapping a few flex items in their own div gives you more versatility in the layout of the pg(s)
+for the example no changing the divs to push sign-up and login to the right side of the pg
+
+while justify-content deals with horizontal alignment, align-items is a way to manipulate the vertical alignment of items
+
+in the .header CSS rule an explicit height: 300px; this gives the ability to pos items nsde of it. this is called "cross-axis" alignment but will cont 2b refers to as vertical alignment
+similar to justify-content, align-items has multiple vals avail. (also align-self uses these)
+> center- positions to the center
+> flex-start - positions to the top
+> flex-end - positions to the bottom
+> stretch -allows creation of an item that stretches the full height of the flex container regardless of how much contentt it contains
+> baseline
+
+flex-wrap is a prop tht allows rendering of your items as a grid. it can chg the alignment, direction, order, and size. going to add in more imgs from the lesson folder
+
+flex-direction the direction refers to whther the container rendeers the items horizontally or vertically. by default it uses horizontal direction.
+a sp char of flexbox you can xfrm the rows to columns with the flex-direction prop.
+
+FLEX-CONTAINERS ORDER: prev to change the order of the images would be to move around the elements in the html itself. 
+Flex-direction: offers ctrl over the order of the flex-items.row-reverse/column-reverse
+now if i were to use the order prop then i could switch the pos of thgs iv designated as first-item and last-item (so far)
+.first-item { order:1; } and .last-item { ord3er; -1;}
+in the snippet abv first and last items are switched even tho they are in diff rows. Unlike w/ the row-reverse & column-reverse on a flexcontainer 'order' works across the row/column boundaries the items all of the items have order numbers of 0 by setting it to 1 i have put the first item to the end. getting the last item to be first its set to -1 so the new order is then -1, 0, 0, 0, 1
+
+
+to align things indiv the align-self prop will override the align-items val from the container. gonna align the social icons and the sub to the bottom of the header with said snippet
+
+.icons, .subscribe { align-self: flex-end; margin-bottom: 20px;} ----- the align-self: flex-end places the items to the bottom of the container, the margin-bottom being set to 20px keeps the items from hugging the very bottom of the header.
+I added it to the above but also stands to mention that align-self has the same vals like align-items
+
+.footer-item {..;..;..; flex: 1;}
+that snippet gives the flex prop the default val of 1 and tells the items to stretch and match the width of the footer container. since they all carry the same weight they will stretch equally. adding flex: 2 will make an item 2x as large as the others.
+The justify-content property distributes extra space between items, the flex prop is similar but instead of adding space btn the space is being distr n2 the items thmslvs. Giving total ctrl over how flex items fit n2 their containers.
+
+flex: initial will fall back on he item's explicit width prop. more advanced way to combine static and flexboxes.
+
+.footer-one,.. {...; flex: initial; width: 300px;}
+if flex: initial were retracted the flex: 1 declaration would be in herited from the footer-item rule, causing the width properties to be ignored. 'initial' fixes that and theres a flexible layout. so far if the browser window is resized the middle item will flex to fill the area as the two outside items maintain the width of 300px.
+
+http://flexboxfroggy.com/
+-->game to play with flexbox properties

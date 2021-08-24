@@ -1,0 +1,97 @@
+* {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+}
+
+.menu-container {
+         color: white;
+         background-color: blue;
+         padding: 20px 0;
+         display: flex; /* giving display the val of flex we're telling the browser that everything inside the bx should be rendered w/i the flexbox instead of the defalut box model w/o this line any of the flex properties that i put in later will be inn ored by the browser so dont forget. */
+         justify-content: flex-end; /* this def the horiz alignment of the items contained in the fllex container. this will show the box centered on the pg */
+}
+
+.menu {
+         width: 900px;
+         display: flex;
+         justify-content: space-between;
+}
+
+.links {
+         display: flex;
+         justify-content: flex-end;
+}
+/* the abv and blw will place both items in the link side by side and leave date on its own since its no long grpd in the same flexbox*/
+.login {
+         margin-left: 20px;
+}
+
+.header-container {
+         color: black;
+         background-color: lightblue;
+         display: flex;
+         justify-content: center;
+}
+
+.header {
+         width: 900px;
+         height: 300px;
+         display: flex;
+         justify-content: space-between;
+         align-items: center; /* this aligns the flex items to the center of the 300px*/
+}
+
+.image-grid-container {
+         display: flex;
+         justify-content: center;
+}
+
+.image-grid {
+         width: 900px;
+         display: flex;
+         justify-content: center; /* this refers to the horizontal alignment until you rotate the direction(using flex-direction) then it will refer to the vertical alignmt. to align to the column to the center fo the pg with an align-items prop. w/ center*/
+         flex-wrap: wrap; /* this allows imgs that dont fit properly to wrap to the next line instead of stacking on each other*/
+         flex-direction: row;
+         align-items: center;
+}
+
+.first-item {
+         order: 1;
+}
+
+.last-item {
+         order: -1;
+}
+
+.icons, .subscribe {
+         align-self: flex-end;
+         margin-bottom: 20px;
+}
+
+.image-grid-item {
+         width: 235px;
+         height: 250px;
+}
+
+.footer {
+         display: flex;
+         justify-content: space-between;
+}
+
+.footer-item {
+         border: 1px solid white;
+         background-color: lightblue;
+         height: 200px;
+         flex: 1;
+}
+
+.footer-three {
+         flex: 2;
+}
+
+.footer-one, .footer-three {
+         background-color: lightgrey;
+         flex: initial;
+         width: 300px;
+}

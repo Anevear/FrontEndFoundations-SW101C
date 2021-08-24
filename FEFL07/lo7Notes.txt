@@ -1,0 +1,202 @@
+dom methods and properties recap:
+>document.getElementById();  ::: most commonly used DOM method. Pulls in the info of an html ele w/ a certain id="" to be then used w/i a .JS function or method
+>document.getElementsByTagName(); ::: pulls in the information of an html ele by using a certain tag to be then used w/i a .JS
+>document.getElementsByClassName(); ::: pulls in the info of an html ele by using a certain class to be then used w/i a .JS
+>.innerHTML ::: this can be used 2 diff ways. 1st-is to retrieve HTML text that already exists on the PG. 2nd- is posting data from .JS function or method onto the html PG
+>HTML Events ::: 	HTML Events are things that can happen to your HTML elements you have already created. Examples could be the page loading, a button being clicked, or a user inputting some data. When the events happen, you may want to do something with those events. That is when Event Handlers come into play.
+>Event Listener ::: To handle an event, you can create an Event Listener. This will "listen" for the specified action and then perform the functionality that you have created.
+
+
+<<<<<<------ document.getElementById() Examples
+
+H:::<button id="submitButton">Submit!</button> <!---<button> w/ id="" ---!>
+J::: var myButton = document.getElementById("submitButton"); // var myButton is accessing the button ele abv by its id=""
+
+H::: <form>
+         <input id="firstName" type="text"/>
+         <input id="lastName" type="text"/>
+         <input id="email" type="text"/>
+     </form>
+J:::
+var firstName = document.getElementById('firstName').value;
+var lastName = document.getElementById('lastName').value;
+var email = document.getElementById('email").value;
+
+another ex of getting the info of inputs. when pulling the info of inputs, be sure to incl the .val ath the end of the method
+
+<<<<<<------ document.getElementsByTagName()
+
+H::: <!-- Below are 3 list items --!>
+<li>apples</li>
+<li>oranges</li>
+<li>bananas</li>
+J::: var fruit = document.getElementsByTagName("li"); // the car fruit is accsssing all tags of "li"
+
+
+<<<<<<------- document.getElementsByClassName()
+
+H::: <p class="paragraph"> I am a paragraph</p>
+J::: var text = document.getElementsByClassName("paragraph");
+
+<<<<<<------ .innerHTML
+
+There are 2 ways to use this property
+
+EX1:
+H:::<p id="paragraph"> I am a paragraph</p>
+J:::var text = document.getElementById("paragraph").innerHTML;
+
+the <p> w/ id="paragraph" then the value of that paragraph to a var of 'text' using the DOM innerHTML property. RN the val is 'I am a paragraph' that is the retrieval part you can then add stuff to it as deom in the next EX
+
+EX2:
+H:::<p id="paragraph"> I am a paragraph</p>
+J:::var text = document.getElementById("paragraph").innerHTML;
+    
+    document.getElementById("paragraph").innerHTML = text + " and I am awesome!";
+
+will get: I am a paragraph and I am awesome!
+
+<<<<<<------ event Listener
+using the getElementById(); to pull in the infor of when the button is clicked. the the eventListener is triggered anytime the button is clicked and sends an alert saying I've been clicked! (see code below)
+
+J::: var myButton = document.getElementById("submitButton");
+     myButton.addEventListener("click", function(){
+              alert("I've been clicked!");
+     })
+
+so far all of the DOM methods have been working with HTML eles that have already been created there is a way to create itmes and adapt depending on what User is doing. Next is the simples way but it is not the most efficient way to create one, Ex below
+
+H::: <div id="container"></div>
+J::: let container = document.get getElementById("container");
+     container.innerHTML = '<h1> Hello World!</h1>;
+
+that would add an h1 heading tag with the text of Hello World! inside of the div element.
+
+
+there is another way to do the same using createElement() and appendChild() with that proceess the elements are created in JS first and added to the DOM as a child of an existing element when deemed necessary
+
+let heading = document.createElement("h1"); //creates the heading element
+heading.innerHTML = "Hello World!" // adds text to the element
+
+let container = document.getElementById("container"); //select the element you want to insert into
+container.appendChild(heading); //inserts the heading into the container
+
+that code will allow y9ou to create an h1 header. In this manner you can even capture from dara from an input, then use these steps to display a heading based on the user's input.
+
+input message and the onchange="" with the function in the JS  it will continue to add the input to the div and create line after line it doesnt overwrite anything! keep that in mind. no Erasing
+
+<<<<<<<---------- NODES
+everything in the doc tree is known as a node; this incl elements, text, comments, and attributes.
+
+<<<--- Node Types: con types below
+<>Document-represents the entire document ( the root-node of the DOM tree)
+<>DocumentFragment-represents a 'lightweight' Document object, which can hold a portion of a document
+<>Element- represents an element
+<>Attr- represents an attribute
+<>Text- represents textual content in an element or attribute
+<>Comment- represents a comments
+
+<<<--- Node Properties: ea node supports a series of properties that can be used for interaction w/ the node. There are many nodes so this isnt a complete list.
+<>childNodes- returns all of the child nodes of this node
+<>firstChild- returns the first child or null
+<>lastChild- returns the last child of null
+<>nextSibling- returns the sibling of this node in the tree or null
+<>nodeName- returns the name of the node
+<>nodeType- returns and integer representing the node type (ex:: ELEMENT=1, TEXT=3, DOCUMENT=9)
+<>nodeValue- for text nodes, returns the text
+<>parentNode- returns the parent node
+<>parentElement- returns the parent element
+<>previousSibling- returns the previous sibling of this node in thte tree or null
+<>textContent- the text content of this node and all children
+
+<<<--- Node Methods: ea node also supports a series of methods. commonly used node methods below
+<>appendChild()- adds a node as the last child of a node
+<>hasChildNodes()- returns true if the specified node has any child nodes, otherwise it returns false.
+<>insertBefore()- inserts a node as a child right before a specified, existing child
+<>removeChild()- removes a specified child node of the specified element
+<>replaceChild()- replaces a child node with a new node.
+
+
+FEFL07Practice: 
+example1 is for the removing of a particular child node.
+example2 the appendChild() method can be used to create a new node inside of another node. this ex uses a container div and ea time the button is clicked the addAChild() function will add a new div into the container div and you can add as many new child nodes as you like (by clicking) added a border to watch it grow
+example3 this removes the first child of a list when the button is clicked. Now! <ul> and the child <li> elements are not indented like a normal list would be. This is b/c the DOM looks at whitespace of the space inbtn elements. so if you have each <li> element indented, it will read the indents as whitespace and you would have to click the button twice to remove the element. --- Now w/o the whitespace clicking the button multiple times it would remove the li in the 0 index position.
+
+read more about the DOM nodes at the dev.moz bookmark
+
+
+<<<<<-------- Regular Expressions (Regex)
+
+Regex:: provides a quick, simple way to match a string to a pattern. its also short for regular expreseeions. they use special somewhat condusing codes to detect patterns in strings of text. EX like creating an HTML for a User to enter details and one field that takes a phone number. some can even get it wrong with a hint like (xxx)xxx-xxxx. You could write a script to check every char entered to ensure that ea number is where it belongs and is in the right format... that would be tedious
+Regex can look complicated @ times but in reality they are jsuts text strings
+
+BASIC SYNTAX
+2 most basic symbols
+>< ^ - the caret(kakarot!!!!) may be used to indicate the beginning of the string
+>< $ - the dollar sign is used to mark the end of a string.
+
+few ex of how the ^ and $ are used.
+
+>>Programmer - Matches "I am a Programmer and Analyst." Neither the ^ or $ are used, so "Programmer" can exist anywhere w/i the string.
+>> ^Programming - Matches the strings that *start* w/ the word Programming. For ex "Programming is what I do!" (will match)--- "I am good as Programming." will NOT match
+>> Programmer$ - Matchs strings that *end* w/ the word Programmer. "I love being a Programmer." (will match) "She's a Programmer, too." will NOT match
+>> ^Programmer$ - Will ONLY match the word Programmer and nothing else. "Programmer uh Programmer" would not match its a single word checker
+
+There may come a timew where you want to search for special characters in a string such as the $ or ^. To do this, you need to prefix the special char with a \ like ----
+>>  \$\$ // this will match the dbl $$ in "I need all the money $$"
+
+https://www.regextester.com/  ---- that is a RegEx Testing site
+
+
+SQUARE BRACKETS []
+1st ex regex will match any digit from 1-5 inclusive
+>>[12345] - this would match the numbers 1 and 3, but not the letter a or the number 12. the regex means that there should be onlu one char and it needs to be a number btn 1 and 5 to match. [1-5] would produce and identical result as the abv
+>>[a-z] - this regex means that ther should be only *one* character,  and it needs to be a lowercase letter of the English alphabet to match
+[0-9a-zA-Z] - this regex means that there should be only *one* character and is needs to be a digit btn 0 and 9 or an upper or lowercase letter to match (matches any digit or letter)
+
+by putting a ^ immediately following the opening [ you can invert the set of chars;this means the set will match any char NOT listed
+>>[^a-zA-Z] - this regex means that there should be only *one* char and it can be anything EXCEPT an upper or lower-case letter to match
+
+REGEX SPECIAL CHARACTERS
+>< ? - meant that the preceeding char is optional
+>< + - means one or more of the prev char
+>< * - means zero or more of the prev char
+
+Example 1
+>< bana?na - matches 'banana' and 'banna, but not 'banaana'. The a? means that the letter 'a' (the 2nd 'a' in the word) is optional-- meaning that it doesnt *have* to be there before the letter 'n'
+>< bana+na - matches 'banana' and 'banaaana' but not 'banna' The a+ means that the letter 'a' (the 2nd 'a' in the word) can be present one or more times before the letter 'n'
+>< bana*na - matches 'banna', 'banana', and 'banaaana', but not 'bnana'. The a* means that the letter 'a' (the 2nd 'a' in the word) can be present zero or more times before the letter 'n'
+>< ^[a-zA-Z]+$ - The '^[a-zA-Z]' means the start of the string should have any lowercase or uppercase letter. The + means that the [a-zA-Z] (any lowercase or uppercase letter) can occur multiple times before the end of the string ($).
+
+Example 2
+You can also use () to grp strings together to apply ?, +, or * to them as a whole.
+>> ba(na)+na - this matches 'banana' and 'banananananananana' {BATMAN XD} but will not match 'bana' or 'banaana'. (na)+ mansa that the letter combination of 'na' can be present one or more times.
+
+() also let you def several strings that may match, using the pipe | character to separate them.
+
+>> ^(ba|na)+$ - this matches 'banana', 'nababa', 'baba', 'nana', 'ba', 'na' and several others. (ba|na) means either 'ba' or 'na', the trailing + means that 'ba' or 'na' can occur one or more times. The ^ means that either 'ba' or'na' need to exist at the start of the string, while the $ means that either 'ba' or 'na' must reside at the end of the string (and it can be only one).
+
+if you need to match ( or ) in the string you need to precede it with a backslash \:
+>> \([0-9][0-9][0-9]\) - this will match '(123)', '(492)', and many others. teh regex means that there must be an opening ( followed by 3-digits btn zero and nine and a closing ) in order to match.
+
+
+SPECIAL CODES:
+few more special codes that can be used for matching chars:
+>> . (period) - any char except a newline
+>> \n - a newline char
+>> \r - a carraige return char
+>> \t - a tab char
+>> \b - a word boundary (the start or end of a word)
+>> \B - anything but a word boundary
+>> \d - any digit (same as [0-9]).
+>> \D - anything but a digit (same as [^0-9])
+>> \s - single whitespace (space, tab, newline, etc.)
+>> \S - single non-whitespace
+>> \w - a "word character" (same as [A-Za-z0-9_])
+>> \W - a "non-word character" (same as [^a-za-z0-9_])
+Notice that the above chare need to be escaped w/ a \ to be treated as sp codes.
+
+
+>> ^Score:\t[0-9]+ - this regex means that starting at the beginning of the string, the word "Score" followed by a colon (:) must be present to match. it also req a tab character (\t) to follow the colon and then at least one number btn zero and nine.this would match "Score: 5" and "Score: 100" , as well as several others (NOTE: the whitespace in btn "Score:" and the number is meant to be a tab).
+>> ^\(\d\d\d\) - This matches '(123)', '(492)', and many others. The regex means that there must be an opening parenthesis followed by three digits between zero and nine and a closing parenthesis in order to match. This is like the \([0-9][0-9][0-9]\) example above.
+>> ^\s*Hello$ - This regex means that there may be zero or more (*) whitespace characters (\s) at the start of the string (^) and then the word "Hello". Nothing can follow the word "Hello" to match (due to the $).

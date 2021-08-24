@@ -1,0 +1,22 @@
+notes referencing class.js
+
+
+
+sometimes you want a lil more cotl in prop of a class so getters and then setters
+def class called car
+for constructor of car will take make model and year
+you will then set the properties
+def the var myCar to a new inst of the class car 
+insert what you want I used my Impreza in the code
+after such you use the let of myCar to access the props with myCar.make and then so forth
+now we can limit what values are added by what you preset it to with the getters: special methods of a class that will get a var or certain prop.
+we are going to then make a container for those options with an array @ const possibleMakes
+having extra ctrls like what could be use interchangably with parts like at a dealership this is where getters and setters come into play so we use internal code to easily hold the values its limiters and this is where "_" is used. 
+**for a dev coming into your code and not allowing them to acess the vals directly the "_" is the indicator (universally understood for devs versed in .js) its used as an indicator for the dev not to chg it unless they kno exactly what needs to be added or chgd good vis indicator
+in the class () is used after it is not
+get and set lets the dev after to work within restrictions
+its not being invoked as a func its being invoked as a prop.
+wev'e added the set oto an array of the only poss we wantp the limits to be the if then bothers a boolean true fals so we have the else as a thrown err catch
+we set another get method as a console.log if the info is aceptable
+
+

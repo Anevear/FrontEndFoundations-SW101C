@@ -1,0 +1,174 @@
+HTML ---- the code in the dhtml is ussing Content Delivery Networks (CDN's) 2 add the nec libs 2 the pg. Ths are lins tht r hosted n the cloud by a serv. allowing the incl of the libs in the app w/o needing 2 hv the files loc on a personal server.
+
+IF you want to incl the files in your project and not use CDN's you can follow steps outlined in https://getbootstrap.com/docs/4.1/getting-started/download/
+
+--> I'd likely try with the NPM rather than anything else but for the short of it we'll stick to CDN's for the lessons. I come across node more often than not so I want to get familiar with it. but dnt 4gt the compiler and such
+
+Responsive Breakpoints--->> Responsiveness: the ability of changing a website's contents based on the sice of the view. It is and auto adjustment or re-alignment of elements on a pg to fir the the scrn size of the device being used.---it very easy to create these responsive webpages by adding classes to elements indicating how much of the screen ea element is to take up depending on the size of said screen. Multiple classes can be assigned to any element. this will be used. and so comes media queries
+
+Media queries: a CSS rule that measures the view of the current window and adjust the properties of an element depending on the size be it lrg or small.
+
+@media (max-width: 576px ) { body { background-color: lightblue; } }
+in the code above (css) on a computer screen if you resize the window to less than 576px the entire background of the simple body will change to the color coded, in this case a lightblue.
+
+the breakpoint notations of sm, md, lg, and xl are used in several Bootstrap classes to def when said Bootstrap rule should be applied to and element which are clarified in the Grid System topic
+
+                  V---<--breakpoints below-->---V
+>sm: is for small devices, landscape phones, 576px and up. ---> @media (min-width: 576px) { ...}
+>md: is for medium devices, tablets, 768px and up. ---> @media (min-width: 768px) { ...}
+>lg: for large devices, desktops, 992px and up. ---> @media (min-width: 992px) { ...}
+>xl: for extra large devices, large desktops, 1200px and up. ---> @media (min-width: 1200px) { ...}
+                  ^---<--- just a chart --->---^
+
+containers, rows, and columns are used to def how elements should be sized and aligned with predefined flexbox rules. All this with the use of the bootstrap classes.
+flexbox uses CSS rules to def the layout
+bootstrap uses classes in the HTML to specify which of the CSS rules should be applied.
+
+container class and container-fluid class manage the widt of the primary Bootstrap element so that it formats all of the child elementws according to the screen size. that wasll all elements w/i the container element will fit within the window (as opposed to having to scroll the screen to see it on a comp window-- no idea on a tablet or mobile) 
+*** care should be taken when defining the sizess of the elements nsd the containers in CSS as there are some exceptions that can be written to over-ride this
+
+Rows & columns---> Row elements grp other elements together shat need to appear horizontally across the pg. the elements nsd a row (in this case the text that says Number One/Two/Three of three columns in the html) all this is similar to the HTML <table> element containing <tr> (table rows) and <td> (table data) elements nsd of the table rows
+Since the row element is designed for managing the columns, putting any content directly directly nsd of a row element could cause some unintended side effects w/ sizing and layout. All pg content should be put nsd a column element
+**Def the class="containers", class="rows", and class="columns" makes it easier to read the code and understand how ea element is used in the layout. this is a key ft. of Bootstrap.
+
+As many rows can be added to the container as wanted, however theres a limit of 12 columns per row.
+In the new part of the html and 13 rows shrinking the pg will have them wrapping around but at the highest width will still leave thirteenth column on the 2nd row.
+
+There are 2 ways to have some columns appear larger than others w/i a row. Both w/ Responsiveness in mind. You can specify how many columns a particular element can occupy or automatically size the element according to the content it contains 
+
+rows automatically have 12 columns ALWAYS when you set an element such as a div to col the number of columns is automatically calc. to force an element to occupy a certain number of columns you can do that with a class designation.
+
+you can specify the widths for ea element in the row so long and the total adds up to 12. EX col-2, col-3, col-4, and col-3 would be valid. If the vals add up to 12 there can be unexpected wrapping of elements. they can add up to less than 12 if you do not want to fill the entire row.
+
+Alternatively yo can size the columns to match the size of the content instead of spanning the avail space.
+
+the horizontal alignment of columns is primarily managed by the parent 'row' element. if you were to want to mess with alignment in the html you can use the following classes.
+>justify-content-start: aligns columns to the left side of the row
+>justify-content-center: aligns columns to the middle of the row
+>justify-content-end: aligns columns to the right side of the row
+>justify-content-around: aligns columns w/ equal dist of space around them
+>justify-content-between: aligns columns to the left and right w/ equal space btn ea element while filling the row.
+
+Question 2/3: to have equal distribution of space both between and around the columns, use the justify-content-around. (the wording is different enough to note from the quiz)
+
+#hoizInDoc - that is the html demo of the justify-content
+
+Vertical alignment of all columns is managed by their parent row element. Column can be aligned w/i a row vertically using 1 of hte following classes.
+>align-items-start: aligns all the columns to the top of the row
+>align-items-center: aligns all the columns to the center of the row
+>align-items-end: aligns all the columns to the bottom of the row
+<----- either above or below will do the same to an extent--->
+Ea column can b aligned vertically separate from the rest of the columns w/ align-self properties
+>align-self-start: aligns the column to the top of the row
+>align-self-center: aligns the column to the center of the row
+>align-self-end: aligns the column to the bottom of the row
+
+breakpoints charted at line 17
+breakpoint designation indicates when a particular rule in several classes in bootstrap. simpler than writing a media queries to handle all of the rules to apply for ea screen size
+
+for columns the same col-* classes can be used w/ a breakpoint incl in the class name. ie like if you want and element to span 4 columns when viewed on a larg screen but span 8 columns when viewed on a small screen. see following code
+
+<div class="col-sm-8 col-lg-4"> Content Goes Here </div>
+
+this will cause the col to resize itself and span more of the screen wehn the screen gets smaller allowing for change in ea element w/i the grid for ea possible screen size without having to write a bunch of media query rules for ea type of device that might view it.
+
+<div class="col-6 col-sm-3"> content in here </div>
+
+when the screen is less than 576px in size there will be 2 rows with 2 elements ea. the colomun will take up 6 cols out of the 12 avail. if its larger than that ea element's column will only take up 3 out of the 12 avail cols
+
+<div class="col-lg-6 col-sm-3"> content in here </div>
+
+in the snippet above (added -lg) when the screen is 992px or larger there will now be 2 rows of 2 elements taking up 6 cols each, if the screen size is between 576px and 991px there will be 1 row with 4 elements taking up 3 of the 12 cols ea. Now! if the screen is less than 576px ea element will default to spanning all 12 cols. Ea element will then be on a row of its own all b/c there is no class for that screen width.
+
+elements can be moved to t he right by using and offset-* class. it will increase the left margin of an element by the  number of cols you specify.
+
+ea row in the container id offsetEx has an element that is shifted to the left by the number of cols specified by the offset-sm-* class
+
+*** you can use breakpoints for offset classes as well as the collimn size classes, this gives you a lot of flexibility in aligning your elements according to their screen size. breakpoints are not required to use an offset.
+
+
+Forms--->> the way you manage the layout in bootstrap is similiar to how the grid system is used. Form elements get grouped together.
+Originally labels are used to give some context of what an input is for. in html the for="" would be used to asscoiate a label with an input based on its id. Bootstrap does not use this. Instead it will be defined by wrapping the label and input together into a Form-Group. Providing optimum spacing btn the label and the input when bootstrap tries to apply styles to the controls.
+
+Now! with the 2 forms the first form has the class="form-control" this helps Bootstrap id when a control should be styled by bootstrap. the 2nd form the class is left off and so the forms look different.
+
+Question 2/3: bootstrap CANNOT use the for attribute on a label to determin which input the label is for. (true::false) this would be the true stmt
+
+Bootstrap can manage where diff elements apper but it also has built in styling. Up til this point its been placement. starting at line 93 its a bit more into the styling with forms.
+
+<div class="form-group row"> 
+next is going to be the 
+<div class="form-row">
+
+with that one when the browser is resized (width-wise) to smaller than the md breakpoint the form will hv a more stacked layout. when its larger than md the 2 form groups will appear side by side
+**forms can use the same grid system classes that you use with other elements.
+
+Input Groups---->> Input groups give you a way to have stylized inputs. You can adjust the size of the inputs, append, or prepend elements to an input, & arrange their layout. Start by creating a wrapper element and use the input-group class to def the element as a wrapper for that input group. n the same wrapper ele, add an input-group-* classe where * is the size you want for the eles.
+
+inputPrepend: the label comes before input-group-sm (and such) just tells the size. The use of the span tag taht each have an input-group-text and are then wrapped inside of a <div> w/i the in-grp-prep class. Its a way to visually link text w/ an input w/i the input grp.
+
+inputAppend:reverse the order of the <div> and <input> then the text will appear at the end of and inline w/ the input.
+
+Diff input elements can be styled based on their type. Inputs like radio buttons, dropdown menus, and text areas. More Bootstrap docs -->> https://getbootstrap.com/docs/4.0/components/input-group/
+
+
+Theme Colors!!! YOu can chg the txt colors or the bkgd colors of diff elements. use text-* or bg-* there are a few default color CSS rules.
+TEXT = {primary, secondary, success, danger, warning, info, light, dark, muted,white} 
+BKGD = {Primary, Info, White}
+
+Color theme classes can be used on any ele in the body of the doc incl the body itself. Useful for buttons, navigation bars, or inputs. for Visual appeal and all
+
+Theme Colors - Continued
+Changing Themes
+If you don't like the default colors that come with Bootstrap, there are a lot of themes you can pick from, or you can even make up your own custom themes.
+
+Many websites offer both free or paid for Bootstrap themes. Some themes have to be downloaded, while others are hosted on a CDN. One very popular free CDN library of Bootstrap themes is Bootstrapcdn.
+
+Try using one of the special themes instead of the default Bootstrap theme.
+
+First, you need to remove the original CSS link to the default theme. The first link element in the head of your index.html should contain a link to https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css. This is the one you want to remove.
+
+Next you need to pick a theme you want to use. Navigate to www.bootstrapcdn.com/bootswatch/ and find a theme you like. For this example you can use flatly.
+
+Additional Info!
+BootstrapCDN is the CDN host for the Bootswatch themes. If you want to download the themes and put them in your project directly you can go to bootswatch.com and download them there.
+
+The theme will have an arrow button below it that will provide you with the HTML code that needs to be added to your webpage. Copy that HTML code so you can use it in the next step.
+
+Add the HTML code snippet with the link element to the head of your index.html. Make sure it is the first link element in your head and you have removed the previous Bootstrap CSS CDN link.
+
+Here is what the head of your index.html file should look like:
+
+index.html file:
+<head>
+    <title>Bootstrap Lesson</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/flatly/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-gJWVjz180MvwCrGGkC4xE5FjhWkTxHIR/+GgT8j2B3KKMgh6waEjPgzzh7lL7JZT" 
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" 
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</head>
+
+{{{{{{A browser window with the Bootstrap lesson. The window has a white background and three rows. The first row has an input group labeled Small. The second row has an input group labeled Default. The Small input group is shorter than the Default input group. The third row has an input group labeled Large. The Large input group is taller than the Default input group. All three input groups are the same width and are centered on the page. The labels of the input groups are all to the right of the text field.}}}}}}
+
+**** this will not affect the behavior of Bootstrap, only the appearance.
+
+
+One of the most common elements most people want to change is the button element add the btn class to the button ele itself. it can also work with <input> and <a>
+
+the btn class only changes the way the button appears but not the color thats why the style="" needed to be added. Can also use the semantic color naming system. 
+*** btn and btn-* classes together, a btn-* color class does not replace the need for the btn class the outline of the button can be chgd w/ btn-outline-* w/ the semantic color classes
+
+A useful ft of buttons and button coloring is that they auto adjust to the chgs in state, Hover over one it will auto darken, when it is clicked a highlighted border will be added around it. Bootstrap already has the pseudo-class CSS rules applied so that the interfacedoesnt req and additional coding. you can also chg the size of the buttons as well
+ if you want the button to appear the same width as its parent ele you can use the btn-block class.
+
+Still check the ntbk for key terms.

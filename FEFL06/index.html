@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+         <head>
+                  <title>Bootstrap Lesson</title>
+                  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+                  <link rel="stylesheet" href="style.css">
+                  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+                  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+                  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+         </head>
+
+         <body>
+                  <h1>Hello there.</h1>
+                  <h6>General Kenobi.</h6>
+
+                  <div class="container">
+                           <p>I am a slightly longer paragraph than I probably should be.  I am taking up the entire width of the page to demonstrate the difference between a container and a container-fluid class. Bootstrap will take care of the rest.</p>
+                  </div>
+
+                  <div class="container-fluid">
+                           <p>I am another slightly longer paragraph than I know I should be.  I am taking up the entire width of the page to demonstrate the difference between a container and a container-fluid class. (Im the fluid one) Bootstrap will take care of the rest.</p>
+                  </div>
+
+                  <div class="container" id="inStyling">
+                           <div class="row">
+                                    <div class="col" style="border: 1px solid black">Number One of three columns</div>
+                                    <div class="col" style="border: 1px solid black">Number Two of three columns</div>
+                                    <div class="col" style="border: 1px solid black">Number Three of three columns</div>
+                           </div>
+                  </div>
+
+                  <div class="container" id="rowsNcolumns">
+                           <div class="row">
+                                    <div class="col">One of 3 columns</div>
+                                    <div class="col">Two of 3 columns</div>
+                                    <div class="col">Three of 3 columns</div>
+                           </div>
+                           <div class="row">
+                                    <div class="col">One of two columns</div>
+                                    <div class="col">two of two columns</div>
+                           </div>
+                           <div class="row">
+                                    <div class="col">1/5 of five columns</div>
+                                    <div class="col">2/5 of five columns</div>
+                                    <div class="col">3/5 of five columns</div>
+                                    <div class="col">4/5 of five columns</div>
+                                    <div class="col">5/5 of five columns</div>
+                           </div>
+                  </div>
+
+                  <div class="container" id="colLimiters">
+                           <div class="row">
+                               <div class="col">1 of thirteen columns</div>
+                               <div class="col">2 of thirteen columns</div>
+                               <div class="col">3 of thirteen columns</div>
+                               <div class="col">4 of thirteen columns</div>
+                               <div class="col">5 of thirteen columns</div>
+                               <div class="col">6 of thirteen columns</div>
+                               <div class="col">7 of thirteen columns</div>
+                               <div class="col">8 of thirteen columns</div>
+                               <div class="col">9 of thirteen columns</div>
+                               <div class="col">10 of thirteen columns</div>
+                               <div class="col">11 of thirteen columns</div>
+                               <div class="col">12 of thirteen columns</div>
+                               <div class="col">13 of thirteen columns</div>
+                           </div>
+                  </div>
+
+                  <div class="container" id="colsAreTwelve">
+                           <div class="row">
+                                    <div class="col-8">This div uses 8 columns</div>
+                                    <div class="col-4">This div uses 4 columns</div>
+                           </div>
+                  </div>
+
+                  <div class="container" id="colSizing">
+                           <div class="row">
+                                    <div class="col-auto">Div auto adjusts to content</div>
+                                    <div class="col">Div spans available space </div>
+                           </div>
+                  </div>
+
+                  <div class="container" id="hoizInDoc">
+                           <div class="row justify-content-start">
+                                    <div class="col-4">One of two columns</div>
+                                    <div class="col-4">Two of two columns</div>
+                           </div>
+                           <div class="row justify-content-center">
+                                    <div class="col-4">NumberOne of two columns</div>
+                                    <div class="col-4">NumberTwo of two columns</div>
+                           </div>
+                           <div class="row justify-content-end">
+                                    <div class="col-4">1 of two columns</div>
+                                    <div class="col-4">2 of two columns</div>
+                           </div>
+                           <div class="row justify-content-around">
+                                    <div class="col-4">One of 2 columns</div>
+                                    <div class="col-4">Two of 2 columns</div>
+                           </div>
+                           <div class="row justify-content-between">
+                                    <div class="col-4">1/2 of two columns</div>
+                                    <div class="col-4">2/2 of two columns</div>
+                           </div>
+                  </div>
+
+                  <div class="container" id="vertAlign">
+                           <div class="row align-items-start" style="height: 200px; border: 1px dotted blue;">
+                                    <div class="col">One of 3 columns</div>
+                                    <div class="col">Two of 3 columns</div>
+                                    <div class="col">Three of 3 columns</div>
+                           </div>
+                           <div class="row align-items-center" style="height: 200px; border: 1px dotted blue;">
+                                    <div class="col">1 of three columns</div>
+                                    <div class="col">2 of three columns</div>
+                                    <div class="col">3 of three columns</div>
+                           </div>
+                           <div class="row align-items-end" style="height: 200px; border: 1px dotted blue;">
+                                    <div class="col">1/3 of three columns</div>
+                                    <div class="col">2/3 of three columns</div>
+                                    <div class="col">3/3 of three columns</div>
+                           </div>
+                  </div>
+
+                  <div class="container" id="selfAlign">
+                           <div class="row" style="height: 200px; border: 1px dotted blue;">
+                                    <div class="col align-self-start">One of three columns</div>
+                                    <div class="col align-self-center">One of three columns</div>
+                                    <div class="col align-self-end">One of three columns</div>
+                           </div>
+                  </div>
+
+                  <div class="container" id="smBreakpoint">
+                           <div class="row">
+                                    <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+                                    <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+                                    <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+                                    <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+                           </div>
+                  </div>
+
+                  <div class="container" id="lgBreakpoint">
+                           <div class="row">
+                                    <div class="col-lg-6 col-sm-3">.col-6 .col-sm-3</div>
+                                    <div class="col-lg-6 col-sm-3">.col-6 .col-sm-3</div>
+                                    <div class="col-lg-6 col-sm-3">.col-6 .col-sm-3</div>
+                                    <div class="col-lg-6 col-sm-3">.col-6 .col-sm-3</div>
+                           </div>
+                  </div>
+
+                  <div class="container" id="offsetEx">
+                           <div class="row">
+                                    <div class="col-sm-4">.col-sm-4</div>
+                                    <div class="col-sm-4 offset-sm-4">.col-sm-4 .offset-sm-4</div>
+                           </div>
+                           <div class="row">
+                                    <div class="col-sm-3 offset-sm-3">.col-sm-3 .offset-sm-3</div>
+                                    <div class="col-sm-3 offset-sm-3">.col-sm-3 .offset-sm-3</div>
+                           </div>
+                           <div class="row">
+                                    <div class="col-sm-6 offset-sm-3">.col-sm-6 .offset-sm-3</div>
+                           </div>
+                  </div>
+
+                  <div class="container" id="form1">
+                           <form>
+                                    <div class="form-group row">
+                                             <label for="input1">Sample label 1</label>
+                                             <input type="text" class="form-control" id="input1" placeholder="Sample Text1">
+                                    </div>
+                                    <div class="form-group">
+                                             <label for="input2">Another label</label>
+                                             <input type="text" class="form-control" id="input2" placeholder="Sample text the second">
+                                    </div>
+                           </form>
+                  </div>
+                  
+                  <div class="container" id="form2">
+                           <form>
+                                    <div class="form-row">
+                                             <div class="col-md-6 form-group">
+                                                      <label for="firstName">First Name</label>
+                                                      <input id="firstName" type="text" class="form-control" placeholder="3rd placeholder">
+                                             </div>
+                                             <div class="col-md-6 form-group">
+                                                      <label for="lastName">Last Name</label>
+                                                      <input id="lastName" type="text" class="form-control" placeholder="4th one it seems">
+                                             </div>
+                                    </div>
+                           </form>
+                  </div>
+
+                  <div class="container" id="inputPrepend">
+                           <form>
+                                    <div class="input-group input-group-sm">
+                                             <div class="input-group-prepend">
+                                                      <span class="input-group-text">Small Size</span>
+                                             </div>
+                                             <input type="text" class="form-control">
+                                    </div>
+                   
+                                    <div class="input-group">
+                                             <div class="input-group-prepend">
+                                                      <span class="input-group-text">Default Sz</span>
+                                             </div>
+                                             <input type="text" class="form-control">
+                                    </div>
+                   
+                                    <div class="input-group input-group-lg">
+                                             <div class="input-group-prepend">
+                                                      <span class="input-group-text">Largest methinks</span>
+                                             </div>
+                                             <input type="text" class="form-control">
+                                    </div>
+                           </form>
+                  </div>
+
+                  <div class="container" id="inputAppend">
+                           <form>
+                                    <div class="input-group input-group-sm">
+                                             <input type="text" class="form-control">
+                                             <div class="input-group-append">
+                                                      <span class="input-group-text">Small One</span>
+                                             </div>
+                                    </div>
+                   
+                                    <div class="input-group">
+                                             <input type="text" class="form-control">
+                                             <div class="input-group-append">
+                                                      <span class="input-group-text">Default to end</span>
+                                             </div>
+                                    </div>
+                   
+                                    <div class="input-group input-group-lg">
+                                             <input type="text" class="form-control">
+                                             <div class="input-group-append">
+                                                      <span class="input-group-text">Lorge</span>
+                                             </div>
+                                    </div>
+                           </form>
+                  </div>
+
+                  <div class="container" id="colors">
+                           <p class="text-success">This is the color of success! Success.</p>
+                           <p class="text-danger">Danger, there be lions ahead! Danger.</p>
+                           <p class="text-muted">This text may not apply to the user anymore. Muted.</p>
+
+                           <div class="bg-primary text-white">This will add emphasis to the element. Primary</div>
+                           <div class="bg-info text-white">Put some interesting info here! Info</div>
+                           <div class="bg-white text-dark">Sometimes plain is just right. White</div>
+                  </div>
+
+                  <div class="container" id="buttons">
+                           <button class="btn" style="background-color: aquamarine;">Click Me</button>
+                           <input type="button" class="btn" value="Click Me!" style="background-color: aquamarine;" />
+                           <a href="http://google.com" class="btn" style="background-color: aquamarine;">Go To Google</a>
+
+                           <button class="btn btn-primary">Submit Me!</button>
+                           <button class="btn btn-secondary">Cancel All of It!</button>
+
+                           <button class="btn btn-outline-primary">Submit That</button>
+                           <button class="btn btn-outline-secondary">Cancel This</button>
+
+                           <button class="btn btn-primary btn-sm">Small Button</button>
+                           <button class="btn">Default Button</button>
+                           <button class="btn btn-success btn-lg">Large Button</button>
+
+                           <button class="btn btn-block btn-primary">Long Block Button</button>
+                  </div>
+
+         </body>
+</html>
