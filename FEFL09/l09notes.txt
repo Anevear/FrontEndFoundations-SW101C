@@ -202,3 +202,5 @@ newObj = {
 };
 
 console.log(newObj.name) gets John logged to the console.
+
+ 
