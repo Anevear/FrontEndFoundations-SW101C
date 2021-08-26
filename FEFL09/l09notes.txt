@@ -1,0 +1,78 @@
+AJAX :: Asynchronous JavaScript and XML
+         for some apps it is necessary to get new info from teh server after the pg is loaded. Like with a chat app. new msgs must be shown as they come in w/o refreshing the whole page continuously. in this sit you can initiate an HTTP request known as an AJAX call. This request is like a norm request like when you type in a web addy. it will not be shown on the pg but will go to thet code for you to decide what to do with it. its handled by a JSON
+
+AJAX cannot work alone. It is used in combination w/ otehr tech to create interactive web pgs
+>>>> JavaScript
+         > A loosely typed scripting lang
+         > JavaScript function is called when an event occurs in a pg
+         > Holds the AJAX operation together
+>>>> DOM
+         > API for accessing and manipulating structured docs
+         > Represents the structure of XML and HTML docs
+>>>> CSS
+         > Allows for a clear separation of the presentation style from the content and may be changed programmatically by JavaScript
+>>>> XMLHttpRequest
+         > JavaScript object that performs asynchronous interaction w/ the server
+
+
+Examples of AJAX :: a few examples of AJAX being used by different websites
+>>>> Google Maps
+         > the user can drag the map around using the mouse, instead of clicking on a button
+>>>> Google Suggest
+         > When typing in the Google search bar, Google offers suggestions based on what you are typing. You can use the arrow keys to navigate the suggestions
+
+
+BROWSER SUPPORT
+Not every browser supports the use of AJAX. When a browser dsnt support AJAX it simply means that the browser dsnt support the creation of a JS obj XMLHttpRequest obj
+The following major browsers support the use of AJAX:
+> Google Chromw 1.0 and abv
+> Apple Safari 1.2 and abv
+> Microsoft Internet Explorer 7 and abv
+> Microsoft Edge
+> Mozilla Firefox 1.0 and abv
+> Opera
+
+An up to date list can be found here: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest#browser_compatibility
+
+XMLHttpRequest :: this obj is the key to AJAX. Its an API** that can be used by JS and otehr web browser scrupting langs. Its used to xfer and manipulate XML data to and from a web server using HTTP, and establishing an independent connection ch btn a webpg's Client-Side and Server-Side
+
+**Application Progamming Interface >> way 4 2 pieces of software to communicate
+
+The data returned from XMLHttpRequest calls will often be provided by back-en databases. Other than XML, XMLHttpRequest can be used to fetch data in other formats such as JSON or plain txt
+
+Syntax for creating an XMLHttpRequest Obj:
+>> const newRequest = new XMLHttpRequest(); (instationates an instance of this XMLHttpRequest)
+all modern browsers have a built-in XMLHttpRequest obj
+
+XMLHttpRequest OBJ METHODS
+
+>> new XMLHttpRequest() :: creates a new XMLHttpRequest obj
+>> abort() :: cancels the current request
+>> getAllResponseHeaders() :: returns header info
+>> getResponseHeader() :: returns specific header info
+>> open(method, url, async, user, psw) :: specifies the request, this starts the communication w/ the server you are trying to talk to. initiates communication
+         method: the request type GET or POST
+         url: the file location
+         async: true(asynchronous) or false(synchronous)
+         user: optional user name
+         psw: optional password
+>> send() :: sends the request to the server: use for GET requests, is the communication
+>> send(string) :: sends the request to the server: used for POST requests
+>> setRequestHeader() :: adds a label/value pair to the header to be sent
+
+XMLHttpRequest OBJ PROPERTIES
+
+>> onreadystatechange :: def a function to be called when the readyState property changes
+>> readyState :: holds the status of the XMLHttpRequest
+         0 : request not initialized
+         1 : server connection established
+         2 : request received
+         3 : processing request
+         4 : request finished and resp is rdy
+>> responseText :: returns the response data as a string
+>> responseXML :: returns the response data as a XML data
+>> status :: returns the status-number of a request
+         200 : "OK"
+         403 : "Forbidden"
+         404 : "Not Found"
+>> statusText :: returns the status-text such as, "OK" or "Not Found"

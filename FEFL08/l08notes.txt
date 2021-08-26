@@ -1,0 +1,99 @@
+jQuery is a JS library that simplifiew multi-line, complicated tasks. jQuery can be used in diff ways::
+>>HTML/DOM manipulation
+>>CSS manipulation
+>>HTML event metehods
+>>Effects and animations
+>>AJAX
+***** jQuery is NOT a language!!!
+
+$("p").hide();
+$ - is the selector, selecting the HTML element "p", and the action you are going to perform on the selected HTML element is .hide()
+$ is a wrapper declaring that you are using and accessing jQuery this can be compared to using var when declaring a variable
+the selector is the HTML element you are querying or targeting in this case its all <p> tags. This syntax of targeting an ele is jQ's way of using DOM (document.getElementsByTagName("p"))
+the action is what you are going to do to the HTML ele you ave targeted. .hide() will hide all paragraph ele
+
+when targeting ele you dont have to use only tags you can target by using a class or id specific to that tag. you would use that if you wanted to focus on only one p tag with the class or id rather than targeting all <p> tags the syntax of targeting classes and ids is the same as in CSS period for a class '.' and # for an id=""
+$(".amazing").hide();  // this focuses on an ele that has a class of amazinig and uses the same .hide() method exampled abv
+
+another important piece is to be sure the Document Ready Event is inl. this prevents the jQ from running before the doc is done loading. All jQ methods must be w/i the Document Ready Event for them to properly work so incl the following whenever jQ is used -- $(document).ready(function(){})
+ie:: 
+$(document).ready(function(){
+         $("P").hide();
+});
+
+
+>>>>>>>Mouse Event
+a mouse event will occur depending on where your cursor is on the pg or what its doing (clicking, hovering)
+
+$(document).ready(function(){
+         $("p").click();
+});
+
+the abv assigned a click event to all <p> on a pg. as it is nothing will happen the next bit will pass a function to the event and use another action.
+
+$(document).ready(function(){
+         $("p").click(function(){
+                  $(this).hide();
+         });
+});
+
+by adding  $(this).hide();   it is now hiding the <p> once they are clicked on. the this keyword refers to the current element being used and in the case of the code abv its the <p> tag.
+
+>>>>> addclass()
+
+jQ can also manipulate CSS. you can define a rule in CSS to a class that isnt in the HTML and then in the JS you can add a jQ rule with a click event to add a class to a tag and then the CSS rull will be applied.
+
+CSS::
+.blue{
+         background-color: blue;
+         font-size: large;
+}
+
+then
+
+JS ::
+$(document).ready(function(){
+         $("p").click(function(){
+                  $(this).addClass("blue");
+         });
+});
+
+aside from the jQ addClass() there are 2 other commonly used methods
+>> removeClass() :: this will do the opposite of addClass() it will take away any CSS class already being used w/ a specific element
+>> toggleClass() :: this will switch btn addClass() and removeClass()
+in the code snippet abv if toggleClass() was there instead of addClass() it will either add the class blue or remove it ea time you clicked on the <p> ele 
+
+.css() :: another commonly used CSS manipulation method. this one DSNT use a previously def class in the style.css there are 2 ways to use it
+>> .css("propertyName") :: this will return the CSS property of the first matched ele
+>> .css("propertyName", "value") :: this will set a specified ele with a specific property and set the value to either a string or a number depending on what the propeerty is. you can use any propertyName and values that you would use in a regular CSS file.
+the 2nd of the ways for .css() is used more frequently than the first, simply b/c you do not need to return the CSS property as much as you would want to set CSS to an element. Example below
+$(document).ready(function(){
+         $("p").click(function(){
+                  $(this).css("color", "orange");
+         });
+});
+
+when User clicks on a <p> the color of the text will chg to orange.
+
+There are more than just the click() mouse event.
+
+https://api.jquery.com/category/events/
+
+>>>>>> Mouse Events
+
+>> dblclick() :: works just like click(), User just need to dbl click rather than single click
+>> mouseenter() :: an event will be fired when you mouse enters a specified area, what has been changed will NOT revert to original when the mouose leaves.
+>> mouseleave() :: an event will be fired when your mouse leaves a specified area, what has been chaned will NOT revert to original when the mouse enters that area
+>> hover() :: this is a comb. of mouseenter() and mouseleave() so w/e is changed when the mouse hovers over an area will revert to its original state when the mouose stops hovering. you will have 2 methods w/i the hover() method
+
+>>>>>> Keyboard Events
+
+>> keyup() :: this event will be fired after a key on the keyboard is pressed and then released
+>> keydown() :: this event will be fired when a key is pressed
+>> keypress() :: this event is fired when a key is pressed all the way down. this would happen after keydown() and before keyup()
+
+>>>>>> Form Event
+
+>> submit() :: this event is fired when User is trying to submit a form 
+>> change () :: this event is fired when an input in a form is changed --- this is good for immediate validation
+>> focus() :: this event will be triggered when someone clicks directly into a specific form field
