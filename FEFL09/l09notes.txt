@@ -76,3 +76,129 @@ XMLHttpRequest OBJ PROPERTIES
          403 : "Forbidden"
          404 : "Not Found"
 >> statusText :: returns the status-text such as, "OK" or "Not Found"
+
+AJAX Request 
+when ur creating a request you need to create a var and assign to it an instance of the XMLHttpRequest obj and then call with open(). then pass params. the first is the action method (GET)- tells the server specifically Hey webserver I want you to get some info for me i wanna read som data from you.. the 2nd could be a webpg or a file. typically a webpg.
+to send a request to a server, use the open() and send() methods of the XMLHttpRequest obj like so:
+
+let xhttp = new XMLHttpRequest();
+xhttp.open("GET", "URLGOESHERE", true);
+xhttp.send();
+
+>> open() :: in the abv the open method starts the AJAX request. W/I this method, there are 3 param. 1st is the GET method which def that the request is gng to 'get' info. Next is the url whch specidies the server loc, this can incl info loc w/i a file, not a URL, such as info.txt. lastly, def the request is gng 2b asynchronous using the keyword 'true'
+--By sending a request asynchronously, JS dsnt have to wait for the server's resp but instead can exe otehr scripts while waiting for the server response or deal w/ the resp after the resp itself is rdy.
+-----Replacing true w/ false will result in a synchronous XMLHttpRequest, however, this is not recommended b/c JS will stop exe until the server resp is rdy. If the server is busy or slow, the app will hang or stop.
+>> send() :: now to consider the second line of the AJAX request, this line takes care of actually sending the request after 'opening' the request.
+
+GET vs POST
+when using the open() method there are serveral dif HTTP requests. incl GET, POST, PUT, and DELETE. only the 1st 2 rn. GET is used to request data from a specified src. > URL and headers only < POST is used to submit data for processing or creating an item on the server. POST can also be used to get some data from the server. > URL, Body(no limit), and headers < **BUT** the POST method NEVER caches data, and is often used to send data along w/ the request. GET is faster and a lil simpler than POST, and can be used in most cases.
+Always use POST requests when:
+>> sending a lg amt of data to the severs as POST has *NO* size limitations
+>> a cached file is not an option
+>> sending user input, which in some cases may contain unknown chars, POST is more robust and secure than GET like a form. sumbit *IS* the post request
+
+PUT is used to update an existing item on the server, like if you have a smth and you want to change that smth > URL,Body, and headers
+DELETE is used delete an existing item on the server > URL, Body, and headers < body is usually not used, usually with the id
+these are the most common request methods. Read, create, edit, and delete.
+
+
+In the httpRequestExample the text was changed with the press of the button by making an AJAX request to the file info.txt and using the DOM to make the change. 
+** since the val of the <div> is being changed with the .innerHTML property HTML can be used instead of plain text.
+Using this process you could potentially replace entire sections of a webpg w/ HTML from other HTML files
+
+*** JSON (say like Jason) short for JavaScript Object Notation :: format for sharing data. Even tho JS is in the name its avail for several prog langs incl Python, Ruby, Java, and PHP
+
+JSON uses the .json file extension when its a stand-alone file. when its def in another file format such as .html, it can appear inside of quotes as a JSON string or it can b an abj asgnd to a var. This process mks the format easy to transmit btn the web server and the client or browser.
+
+JSON OBJ
+
+a JSON obj is a key-val data format that is typically rendered in {} ex below
+{
+         "name": "Artemis",
+         "age": 2,
+         "graduate": false
+}
+OR 
+{ "name": "Artemis", "age": 2, "graduate": false }
+
+as abv the entire obj is surrounded by {} JSON obj are written in key:value pairs where the key comes first then a ( : ), followed by the value. when creating a JSON onj the keys must *ALWAYS* be a string, and the valuse must be a valid JSON data type such as :: string, number, obj, array, boolean or null
+
+json objs can also be in .js or .html files. likely to see them asgnd to a var similar to a JS obj but dnt get them confused ** they are NOT the same
+
+NESTED JSON OBJ:: package.json sample
+{
+         "andrew": {
+                  "username": "Shucks",
+                  "location": "Florida",
+                  "online": true,
+                  "followers": 987
+         },
+         "jesse": {
+                  "username": "JesJesEH",
+                  "location": "Canada",
+                  "online": false,
+                  "followers": 432
+         },
+         "mark": {
+                  "username": "MarkyMark",
+                  "location": "Georgia",
+                  "online": false,
+                  "followers": 321
+         },
+         "kyle": {
+                  "username": "IareKyle",
+                  "location": "New York",
+                  "online": true,
+                  "followers": 654
+         }
+}
+NESTED ARRAYS W/I JSON
+{
+  "firstName": "John",
+  "lastName": "Smith",
+  "location": "Delaware",
+  "websites": [
+    {
+      "description": "work",
+      "URL": "https://www.JSONSMITH.com/"
+    },
+    {
+      "description": "videos",
+      "URL": "https://www.youtube.com"
+    }
+  ],
+  "socialMedia": [
+    {
+      "description": "twitter",
+      "link": "https://twitter.com"
+    },
+    {
+      "description": "facebook",
+      "link": "https://www.facebook.com/"
+    },
+    {
+      "description": "github",
+      "link": "https://github.com"
+    }
+  ]
+}
+>>> The wbsites and socialMedia keys ea use an array to nest info belonging to John Smith
+
+typical use of JSON is to exchange data to and from a web server. when receiving data from a web server the data is always a string. pare the data w/ JSON.parse() and the JS obj
+
+so ex ::
+'{ "name": "John", "age":30, "city":"Arizona"}';
+
+then 
+
+let newObj = JSON.parse('{ "name": "John", "age":30, "city":"Arizona"}');
+
+then u'll b left with
+
+newObj = {
+         name: "John",
+         age: 30,
+         city: "Arizona"
+};
+
+console.log(newObj.name) gets John logged to the console.
