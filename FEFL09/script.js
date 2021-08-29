@@ -6,6 +6,6 @@ gitHubRequest.onreadystatechange = function(){
                   document.getElementById("gitBio").innerHTML = gitObject.bio;
          }
                   
-         gitHubRequest.open("GET", "https://api.github.com/users/Anevear", true);
-         gitHubRequest.send();
-}
+};
+gitHubRequest.open("GET", "https://api.github.com/users/Anevear", true);
+gitHubRequest.send();

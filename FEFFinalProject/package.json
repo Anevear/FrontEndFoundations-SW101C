@@ -1,0 +1,11 @@
+{
+  "name": "feffinalproject",
+  "version": "1.0.0",
+  "description": "final project SW101C",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anevear",
+  "license": "ISC"
+}

@@ -79,6 +79,7 @@ There are more than just the click() mouse event.
 
 https://api.jquery.com/category/events/
 
+
 >>>>>> Mouse Events
 
 >> dblclick() :: works just like click(), User just need to dbl click rather than single click

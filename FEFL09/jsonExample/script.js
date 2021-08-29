@@ -5,5 +5,5 @@ newRequest.onreadystatechange = function() {
                   document.getElementById("example").innerHTML = myObj.name;
          }
 };
-newRequest.open("GET", "https://api.github.com/users/Anevear", true);
+newRequest.open("GET", "new.json", true);
 newRequest.send();
